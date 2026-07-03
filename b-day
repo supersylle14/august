@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>August fylder 15 – MAX BRAINROT EDITION</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Comic+Neue:wght@700&family=Space+Grotesk:wght@400;600;700&display=swap');
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:#050208;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    font-family:'Comic Neue', sans-serif;
+  }
+
+  .card{
+    position:relative;
+    width:920px;
+    height:600px;
+    border-radius:20px;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 10% 8%, #FF2E92 0%, transparent 32%),
+      radial-gradient(circle at 92% 12%, #00E5FF 0%, transparent 30%),
+      radial-gradient(circle at 85% 92%, #FFD400 0%, transparent 34%),
+      radial-gradient(circle at 8% 90%, #7C4DFF 0%, transparent 34%),
+      radial-gradient(circle at 50% 50%, #FF5C00 0%, transparent 40%),
+      #1a0f22;
+    box-shadow:0 40px 80px rgba(0,0,0,0.7);
+    border:8px solid #fff;
+    outline:4px dashed #FFD400;
+    outline-offset:-16px;
+  }
+
+  .sticker{
+    position:absolute;
+    z-index:5;
+    filter:drop-shadow(0 3px 0 rgba(0,0,0,0.5));
+  }
+  .s1{ top:10px; left:14px; font-size:34px; transform:rotate(-18deg);}
+  .s2{ top:8px; left:230px; font-size:26px; transform:rotate(12deg);}
+  .s3{ top:14px; right:230px; font-size:30px; transform:rotate(-8deg);}
+  .s4{ top:20px; right:16px; font-size:32px; transform:rotate(16deg);}
+  .s5{ bottom:130px; left:8px; font-size:28px; transform:rotate(10deg);}
+  .s6{ bottom:14px; left:230px; font-size:24px; transform:rotate(-10deg);}
+  .s7{ bottom:130px; right:8px; font-size:30px; transform:rotate(-14deg);}
+  .s8{ bottom:14px; right:250px; font-size:26px; transform:rotate(8deg);}
+  .s9{ top:46%; left:2px; font-size:22px; transform:rotate(-90deg);}
+  .s10{ top:46%; right:2px; font-size:22px; transform:rotate(90deg);}
+
+  .marquee{
+    position:absolute;
+    top:0; left:0; right:0;
+    background:#000;
+    color:#FFD400;
+    font-family:'Bangers', cursive;
+    font-size:15px;
+    letter-spacing:2px;
+    padding:5px 0;
+    white-space:nowrap;
+    overflow:hidden;
+    z-index:6;
+    border-bottom:3px solid #FFD400;
+  }
+  .marquee span{
+    display:inline-block;
+    padding-left:100%;
+    animation:scroll 14s linear infinite;
+  }
+  @keyframes scroll{
+    0%{ transform:translateX(0); }
+    100%{ transform:translateX(-100%); }
+  }
+
+  .content{
+    position:relative;
+    z-index:2;
+    display:flex;
+    height:100%;
+    padding-top:30px;
+  }
+
+  .avatar-col{
+    width:260px;
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+    border-right:4px dashed rgba(255,255,255,0.5);
+    position:relative;
+  }
+
+  .avatar{
+    width:150px;
+    height:150px;
+    margin-bottom:6px;
+    filter:drop-shadow(0 6px 0 rgba(0,0,0,0.4));
+    transform:rotate(-3deg);
+  }
+
+  .toilet{
+    width:60px;
+    position:absolute;
+    top:18px;
+    right:14px;
+    transform:rotate(12deg);
+    filter:drop-shadow(0 3px 0 rgba(0,0,0,0.4));
+  }
+
+  .lvl-badge{
+    font-family:'Luckiest Guy', cursive;
+    font-size:24px;
+    color:#FFD400;
+    -webkit-text-stroke:2px #000;
+    text-shadow:3px 3px 0 #FF2E92, 6px 6px 0 rgba(0,0,0,0.3);
+    letter-spacing:1px;
+    text-align:center;
+    line-height:1.1;
+  }
+
+  .sigma-tag{
+    margin-top:8px;
+    background:#000;
+    color:#00E5FF;
+    font-size:10.5px;
+    letter-spacing:1px;
+    padding:5px 9px;
+    border-radius:20px;
+    font-weight:700;
+    border:2px solid #00E5FF;
+    text-transform:uppercase;
+    transform:rotate(-4deg);
+  }
+  .ohio-tag{
+    margin-top:8px;
+    background:#FF5C00;
+    color:#000;
+    font-size:10.5px;
+    letter-spacing:0.5px;
+    padding:5px 9px;
+    border-radius:20px;
+    font-weight:700;
+    border:2px solid #000;
+    transform:rotate(3deg);
+  }
+
+  .panel{
+    flex:1;
+    padding:18px 36px 22px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+
+  .top{ display:flex; flex-direction:column; gap:4px; }
+
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:1px;
+    color:#fff;
+    background:#FF2E92;
+    display:inline-block;
+    padding:4px 11px;
+    border-radius:6px;
+    font-weight:700;
+    transform:rotate(-2deg);
+    width:fit-content;
+    border:2px solid #000;
+    font-family:'Comic Neue', sans-serif;
+  }
+
+  h1{
+    margin:6px 0 0;
+    font-family:'Bangers', cursive;
+    font-size:50px;
+    line-height:0.92;
+    color:#FFD400;
+    -webkit-text-stroke:2.5px #000;
+    text-shadow:4px 4px 0 #7C4DFF, 8px 8px 0 #FF5C00, 12px 12px 0 rgba(0,0,0,0.25);
+    letter-spacing:1px;
+  }
+
+  .subrizz{
+    font-family:'Luckiest Guy', cursive;
+    font-size:15px;
+    color:#00E5FF;
+    -webkit-text-stroke:1px #000;
+    margin-top:4px;
+    transform:rotate(-1deg);
+  }
+
+  .quest{
+    background:#fff;
+    border:4px solid #000;
+    border-radius:14px;
+    padding:14px 18px;
+    margin-top:10px;
+    box-shadow:7px 7px 0 #000;
+    transform:rotate(0.5deg);
+  }
+  .quest-title{
+    font-family:'Bangers', cursive;
+    font-size:18px;
+    color:#FF2E92;
+    letter-spacing:0.5px;
+    margin-bottom:5px;
+  }
+  .quest-body{
+    font-size:14.5px;
+    line-height:1.45;
+    color:#111;
+    margin:0;
+    font-weight:700;
+  }
+  .quest-body b{
+    background:#FFD400;
+    padding:0 4px;
+    border-radius:3px;
+  }
+  .quest-body .cyan{ background:#00E5FF; padding:0 4px; border-radius:3px; }
+
+  .footer{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:10px;
+  }
+  .from{
+    font-family:'Luckiest Guy', cursive;
+    font-size:17px;
+    color:#fff;
+    -webkit-text-stroke:1px #000;
+    transform:rotate(-1.5deg);
+  }
+
+  .stamp{
+    font-family:'Bangers', cursive;
+    font-size:15px;
+    color:#111;
+    background:#00E5FF;
+    border:3px solid #000;
+    border-radius:8px;
+    padding:7px 11px;
+    transform:rotate(7deg);
+    letter-spacing:0.5px;
+    box-shadow:4px 4px 0 #000;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="marquee"><span>🚨 GYAT ALERT 🚨 ‼️ RIZZLER LEVEL 15 UNLOCKED ‼️ ONLY IN OHIO 🌽 NPC MODE: OFF 🗿 FANUM TAX INCOMING 💀 SIGMA GRINDSET ACTIVATED 🔥 &nbsp;&nbsp;&nbsp; 🚨 GYAT ALERT 🚨 ‼️ RIZZLER LEVEL 15 UNLOCKED ‼️ ONLY IN OHIO 🌽 NPC MODE: OFF 🗿 FANUM TAX INCOMING 💀 SIGMA GRINDSET ACTIVATED 🔥</span></div>
+
+  <div class="sticker s1">💀</div>
+  <div class="sticker s2">🚽</div>
+  <div class="sticker s3">🗿</div>
+  <div class="sticker s4">🔥</div>
+  <div class="sticker s5">🚨</div>
+  <div class="sticker s6">🌽</div>
+  <div class="sticker s7">✨</div>
+  <div class="sticker s8">‼️</div>
+  <div class="sticker s9">💯</div>
+  <div class="sticker s10">🫡</div>
+
+  <div class="content">
+
+    <div class="avatar-col">
+      <svg class="avatar" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="30" y="8" width="40" height="26" rx="3" fill="#C9CDD1" stroke="#000" stroke-width="2.5"/>
+        <rect x="36" y="16" width="8" height="6" fill="#000"/>
+        <rect x="56" y="16" width="8" height="6" fill="#000"/>
+        <rect x="24" y="36" width="52" height="34" rx="4" fill="#FF2E92" stroke="#000" stroke-width="2.5"/>
+        <rect x="10" y="38" width="16" height="30" rx="3" fill="#C9CDD1" stroke="#000" stroke-width="2.5"/>
+        <rect x="74" y="38" width="16" height="30" rx="3" fill="#C9CDD1" stroke="#000" stroke-width="2.5"/>
+        <rect x="32" y="72" width="16" height="24" rx="3" fill="#7C4DFF" stroke="#000" stroke-width="2.5"/>
+        <rect x="52" y="72" width="16" height="24" rx="3" fill="#7C4DFF" stroke="#000" stroke-width="2.5"/>
+        <rect x="38" y="44" width="24" height="16" rx="2" fill="#00E5FF" stroke="#000" stroke-width="2"/>
+      </svg>
+
+      <svg class="toilet" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="30" cy="18" rx="16" ry="9" fill="#fff" stroke="#000" stroke-width="2.5"/>
+        <path d="M14 18 v14 a16 10 0 0 0 32 0 v-14" fill="#fff" stroke="#000" stroke-width="2.5"/>
+        <rect x="18" y="42" width="24" height="10" fill="#C9CDD1" stroke="#000" stroke-width="2.5"/>
+        <rect x="24" y="20" width="12" height="16" rx="3" fill="#FFD9C7" stroke="#000" stroke-width="2"/>
+        <circle cx="27" cy="26" r="1.6" fill="#000"/>
+        <circle cx="33" cy="26" r="1.6" fill="#000"/>
+        <path d="M27 30 q3 2 6 0" stroke="#000" stroke-width="1.5" fill="none"/>
+      </svg>
+
+      <div class="lvl-badge">LVL 15<br>RIZZLER</div>
+      <div class="sigma-tag">certified sigma</div>
+      <div class="ohio-tag">only in ohio 🌽</div>
+    </div>
+
+    <div class="panel">
+      <div class="top">
+        <div class="eyebrow">TILLYKKE FR FR NO CAP 💯</div>
+        <h1>LEVEL 15!!<br>GYAT RIZZ 🚽🗿</h1>
+        <div class="subrizz">bro really hit 15 and became a whole NPC boss ‼️</div>
+      </div>
+
+      <div class="quest">
+        <div class="quest-title">SIDE QUEST: TOUCHGRASS ARC 🌍 (skibidi edition)</div>
+        <p class="quest-body">
+          Gyat alert 🚨 onklerne har unlocket en IRL quest, bro: en tur til <b>Reffen</b>, hvor du bytter musen ud med spisepinde og spiser dig gennem street food fra hele verden. Ingen fanum tax her, det er 100% <span class="cyan">bussin'</span> no cap 🔥💀
+        </p>
+      </div>
+
+      <div class="footer">
+        <div class="from">fra dine dumme onkler 💀🫡🚽</div>
+        <div class="stamp">GAVE ✓ W RIZZ</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
